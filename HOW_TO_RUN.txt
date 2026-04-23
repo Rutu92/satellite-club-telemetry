@@ -1,0 +1,37 @@
+===========================================
+  HOW TO RUN THIS PROJECT ON YOUR COMPUTER
+===========================================
+
+STEP 1 — Install Java JDK 17+
+  Go to: https://adoptium.net
+  Download and install the LTS version
+
+STEP 2 — Install VS Code
+  Go to: https://code.visualstudio.com
+  Also install the "Extension Pack for Java" inside VS Code
+
+STEP 3 — Open this folder in VS Code
+  File → Open Folder → select this folder
+
+STEP 4 — Open a terminal in VS Code
+  Terminal → New Terminal
+
+STEP 5 — Compile all Java files
+  javac *.java
+
+STEP 6 — Run the program
+  java Main
+
+===========================================
+  YOUR FILES
+===========================================
+  FlightData.java       → Data model (one object per CSV row)
+  TelemetryLoader.java  → Reads the CSV file
+  FlightAnalyzer.java   → Detects ASCENT / APOGEE / DESCENT phases
+  AnomalyDetector.java  → Finds 5 types of anomalies
+  AnomalyFixer.java     → Fixes bad altitude values using interpolation
+  ReportGenerator.java  → Prints the full analysis report
+  Main.java             → Runs everything in order
+  telemetry_dataset.csv → Your data file
+
+===========================================
