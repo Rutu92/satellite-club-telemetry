@@ -1,10 +1,10 @@
-# 🛰️ Satellite Club — Telemetry Analysis System
+# Satellite Club — Telemetry Analysis System
 
 A Java command-line tool that loads rocket telemetry data from a CSV file, automatically detects flight phases and sensor anomalies, repairs bad altitude readings using linear interpolation, and prints a full structured analysis report.
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 Satelite_club_project/
@@ -20,40 +20,14 @@ Satelite_club_project/
 
 ---
 
-## ⚙️ Requirements
+## Requirements
 
 - **Java JDK 17 or later** — [Download from Adoptium](https://adoptium.net)
 - **VS Code** *(recommended)* — [Download here](https://code.visualstudio.com), with the [Extension Pack for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
 
 ---
 
-## 🚀 How to Run
-
-**1. Open the project folder in VS Code**
-```
-File → Open Folder → select Satelite_club_project/
-```
-
-**2. Open the integrated terminal**
-```
-Terminal → New Terminal
-```
-
-**3. Compile all Java files**
-```bash
-javac *.java
-```
-
-**4. Run the program**
-```bash
-java Main
-```
-
-> Make sure `telemetry_dataset.csv` is in the **same folder** as the `.java` files before running.
-
----
-
-## 🔄 How It Works
+## How It Works
 
 The program processes telemetry in a 5-step pipeline:
 
@@ -67,7 +41,7 @@ The program processes telemetry in a 5-step pipeline:
 
 ---
 
-## ✈️ Flight Phases Detected
+## Flight Phases Detected
 
 The dataset contains a **two-segment mission**:
 
@@ -81,7 +55,7 @@ The dataset contains a **two-segment mission**:
 
 ---
 
-## 🚨 Anomalies Detected
+## Anomalies Detected
 
 `AnomalyDetector` checks for five types of problems:
 
@@ -95,7 +69,7 @@ The dataset contains a **two-segment mission**:
 
 ---
 
-## 🔧 Anomaly Fixes
+## Anomaly Fixes
 
 `AnomalyFixer` repairs **altitude-only** issues using the midpoint formula:
 
@@ -108,12 +82,12 @@ Fixed conditions:
 - Altitude spike vs previous row
 - Altitude recorded as `0.0` during descent while clearly airborne
 
-> ⚠️ Temperature and battery anomalies are **noted but not changed** — their values are physically plausible and altering them could introduce false data.  
-> ⚠️ The `APOGEE` row is **never modified** — its high altitude is real.
+> Temperature and battery anomalies are **noted but not changed** — their values are physically plausible and altering them could introduce false data.  
+> The `APOGEE` row is **never modified** — its high altitude is real.
 
 ---
 
-## 📊 Sample Output
+## Sample Output
 
 ```
 ╔══════════════════════════════════════╗
@@ -139,7 +113,7 @@ Fixed conditions:
 ========================================
          ANOMALY DETECTION REPORT
 ========================================
-  ⚠️  t=30  | MISSING altitude value (empty in CSV)
+  t=30  | MISSING altitude value (empty in CSV)
   ...
   Total anomalies found: X
 
@@ -154,7 +128,7 @@ Fixed conditions:
 
 ---
 
-## 📚 Concepts Covered
+## Concepts Covered
 
 - Object-Oriented Design (model class, single-responsibility)
 - File I/O with `BufferedReader`
@@ -166,7 +140,3 @@ Fixed conditions:
 - Formatted console output with `printf`
 
 ---
-
-## 📄 License
-
-Built for educational use by the Satellite Club. Free to use, modify, and extend.
